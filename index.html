@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars & Racing Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 1;
+            padding: 0;
+            background-color: white;
+            color: black;
+        }
+        header {
+            background-image: url('race_web_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 110px;
+            text-align: center;
+            position: relative;
+        }
+        nav {
+            background-color: red;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .menu-item {
+            display: inline-block;
+            margin: 0 20px;
+        }
+      
+        section {
+            padding: 50px;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            position: fixed;
+	    left:0;            
+	    bottom: 0;
+            width: 100%;
+        }
+       .car-type {
+   	   display: inline-block;
+   	   margin: 20px;
+   	   position: relative;
+   	   cursor: pointer;
+   	   vertical-align: top; 
+	}
+         .car-type img {
+            width: 270px;
+            height: 140px;
+            border-radius: 5px;
+	    margin-right: 70px;
+        }
+        .car-type .info {
+	position: absolute;
+	top: 0;
+        left: -100;
+        width: 100%; 
+        height: 100%;  
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 5px;
+	padding: 10px;
+        box-sizing: border-box; 
+        display: none; 
+        font-family: Arial, sans-serif; 
+        color: black 
+	
+        padding: 20px; 
+	text-decoration: none;          
+ 	/* display: none;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            top: -120px;
+            left: 0;
+            width: 200px;*/
+        }
+        .car-type:hover .info {
+            display:block;
+        }
+	#circuit-maps {
+        text-align: center; 
+    }
+
+    .circuit-container {
+        display: flex; 
+        justify-content: center; 
+        flex-wrap: wrap; 
+    }
+
+    .circuit {
+        margin: 20px; 
+        position: relative; 
+        transition: transform 0.3s ease; 
+    }
+
+    .circuit:hover {
+        transform: scale(1.1); 
+    }
+
+    .circuit img {
+        width: 500px; 
+        height: 270px; 
+    }
+
+    .circuit-number {
+        font-size: 18px; 
+    
+        margin-bottom: 5px; 
+    }
+
+    .best .circuit-number {
+        font-size: 24px; 
+        color: black;
+    }
+
+    .circuit-name {
+       	position: absolute;
+	top: 0;
+        left: 0;
+        width: 100%; 
+        height: 100%; 
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 5px;
+	padding: 10px;
+        box-sizing: border-box; 
+        display: none; 
+        font-family: Arial, sans-serif; 
+        color: white 
+	justify-content: center; 
+        align-items: center; 
+        
+        padding: 20px; 
+	text-decoration: none;
+	
+    }
+
+    .circuit:hover .circuit-name {
+        display: block; 
+    }
+	.circuit-name:hover {
+        background-color: rgba(255, 255, 255, 0.8); 
+    }
+	.circuit-name:visited {
+        color: white; 
+    }
+    .best .circuit img {
+        width: 500px; 
+	height: 270px;
+    }
+	
+
+
+    </style>
+</head>
+<body>
+    <img src="logo_1.png">
+
+    <header>
+	<p></p>
+    </header>
+
+    <nav>
+	
+        <a class="menu-item" href="#cars">Cars</a>
+        <span> | </span>
+	<a class="menu-item" href="#racing">Racing</a>
+	<span> | </span>
+	<a class="menu-item" href="#sponsors">Sponsors</a>
+	<span> | </span>
+	<a class="menu-item" href="#circuits">Circuits</a>
+	<span> | </span>
+	<a class="menu-item" href="#about">About</a>
+        <span> | </span>
+        <a class="menu-item" href="#contact">Contact</a>
+	
+    </nav>
+    
+    
+    		        <!-----------------------diff types of cars----------------------->
+    <section id="cars">
+        <h2>Cars</h2>
+        <div class="car-type" >
+            <img src="sedan.png" alt="Sedan">
+            <div class="info">
+                <h3>Sedans</h3>
+                <p>Sedans are typically four-door cars with separate compartments for the engine, passenger, and cargo.</p>
+            </div>
+        </div>
+        <div class="car-type">
+            <img src="suv.png" alt="SUV">
+            <div class="info">
+                <h3>SUVs</h3>
+                <p>SUVs, or Sport Utility Vehicles, are designed for off-road use and have high ground clearance.</p>
+            </div>
+        </div>
+	
+
+    	<div class="car-type">
+            <img src="off-road.jpg" alt="Off-Road">
+            <div class="info">
+                <h3>Off-Road</h3>
+                <p>Off-road vehicles are designed to drive on unpaved surfaces such as sand, gravel, mud, or snow.</p>
+            </div>
+        </div>
+
+    	<div class="car-type">
+            <img src="pickup.jpg" alt="Pickup Trucks">
+            <div class="info">
+                <h3>Pickup Trucks</h3>
+                <p>Pickup trucks have an open cargo area at the back and are often used for transporting goods or materials.</p>
+            </div>
+  	</div>
+
+   	<div class="car-type">
+            <img src="sport.jpg" alt="Sports Cars">
+            <div class="info">
+                <h3>Sports Cars</h3>
+                <p>Sports cars are designed for high performance, speed, and agility, often with two seats and a sleek design.</p>
+            </div>
+   	</div>
+
+   	<div class="car-type">
+            <img src="muscle.png" alt="Muscle Cars">
+            <div class="info">
+                <h3>Muscle Cars</h3>
+                <p>Muscle cars are high-performance American coupes with powerful engines, known for their speed and power.</p>
+           </div>
+   	</div>
+
+   	<div class="car-type">
+    	    <img src="roadster.jpg" alt="Roadsters">
+            <div class="info">
+                <h3>Roadsters</h3>
+                <p>Roadsters are open-top, two-seat sports cars, often with lightweight construction and agile handling.</p>
+            </div>
+  	</div>
+
+   	<div class="car-type">
+            <img src="hypercar.jpg" alt="Hypercars">
+            <div class="info">
+                <h3>Hypercars</h3>
+                <p>Hypercars are top-tier performance cars, pushing the limits of speed, technology, and design.</p>
+            </div>
+   	</div>
+
+   	<div class="car-type">
+            <img src="formula1.jpg" alt="Formula 1 Cars">
+            <div class="info">
+                <h3>Formula 1 Cars</h3>
+                <p>Formula 1 cars are single-seat, open-wheel racing cars used in top-level international racing competitions.</p>
+            </div>
+        </div>
+    </section>
+
+                                 <!-----------------------diff types of races----------------------->
+
+   <section id="racing">
+    <h2>Racing</h2>
+
+    <div class="car-type">
+	<a href="https://www.formula1.com/" target="_blank">
+        <img src="Formula-1.jpg" alt="Formula 1" style="width: 450px; height:225px;">
+        <div class="info" style=" justify-content: center;">
+            <h3>Formula 1</h3>
+            <p>Top-level single-seater racing sanctioned by the Fédération <br>Internationale de l'Automobile (FIA).</p>
+        </div></a>
+    </div>
+
+    <div class="car-type">
+	<a href="https://www.nascar.com/" target="_blank" >
+        <img src="NASCAR.jpg" alt="NASCAR" style="width: 450px; height:225px;">
+        <div class="info">
+            <h3>NASCAR</h3>
+            <p>American stock car racing series known for oval track racing.</p>
+        </div></a>
+    </div>
+
+    <div class="car-type">
+	<a href="https://www.fiaformulae.com/" target="_blank" >
+        <img src="Formula-E.jpg" alt="Formula E" style="width: 450px; height:225px;">
+        <div class="info">
+            <h3>Formula E</h3>
+            <p>Electric-powered single-seater racing series focused on <br>promoting electric vehicles.</p>
+        </div></a>
+    </div>
+
+    <div class="car-type">
+	<a href="https://www.lemans.org/en/" target="_blank" >
+        <img src="LeMans.jpg" alt="Le Mans 24 Hours" style="width: 450px; height:225px;">
+        <div class="info">
+            <h3>Le Mans 24 Hours</h3>
+            <p>Endurance race held annually in Le Mans, France, where cars <br>race for 24 hours.</p>
+        </div></a>
+    </div>
+
+    <div class="car-type">
+	<a href="https://www.wrc.com/" target="_blank" >
+        <img src="Rally.jpg" alt="Rally" style="width: 450px; height:225px;">
+        <div class="info">
+            <h3>Rally</h3>
+            <p>Off-road races held on varying terrain, often with point-to-point <br>or stage formats.</p>
+        </div></a>
+    </div>
+
+    <div class="car-type">
+	<a href="https://www.nhra.com/" target="_blank">
+        <img src="Drag-Racing.jpg" alt="Drag Racing" style="width: 450px; height:225px;">
+        <div class="info">
+            <h3>Drag Racing</h3>
+            <p>Straight-line acceleration contests over a quarter-mile distance.</p>
+        </div></a>
+    </div>
+
+    <div class="car-type">
+	<a href="https://www.formulad.com/" target="_blank" >
+        <img src="Drift-Racing.jpg" alt="Drift Racing" style="width: 450px; height:225px;">
+        <div class="info">
+            <h3>Drift Racing</h3>
+            <p>A judged motorsport where drivers intentionally oversteer, <br>causing loss of traction, and slide their cars through corners.</p>
+        </div></a>
+    </div>
+
+    <div class="car-type">
+	<a href="https://www.fiagt.com/" target="_blank">
+        <img src="GT-Racing.jpg" alt="GT Racing" style="width: 450px; height:225px;">
+        <div class="info">
+            <h3>GT Racing</h3>
+            <p>Racing with production-based cars modified for racing, such<br> as the FIA GT Championship.</p>
+        </div></a>
+    </div>
+   </section>
+                         <!------------------sponsors----------------->
+   <section id="sponsors">
+	<h2>Sponsors</h2>
+	<a href="https://www.formula1.com/en/toolbar/partners.html" target="_blank" title="List Of Company Sponsors"> 
+	<img src="Sponsors.png" width="1000" height="600"></a>
+   </section>
+                          <!------------------diff race map circuits---------------------->
+   <section id="circuits">
+   	<h2>Racing Circuit Maps</h2>
+	  
+
+   <div class="circuit-container">
+    <div class="circuit">
+        <div class="circuit-number">#1 Spa-Francorchamps</div>
+        <a href="https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps" target="_blank">
+            <img src="spa.jpg" alt="Spa-Francorchamps">
+            <div class="circuit-name" style="display: none; justify-content: center;">Spa-Francorchamps, Belgium</div>
+        </a>
+    </div>
+
+    <div class="circuit">
+        <div class="circuit-number">#2 Gilles Villeneuve</div>
+        <a href="https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve" target="_blank">
+            <img src="gilles_villeneuve.jpg" alt="Circuit de Gilles Villeneuve">
+            <div class="circuit-name"style="display: none; justify-content: center;">Circuit de Gilles Villeneuve, Canada</div>
+        </a>
+    </div>
+
+    <div class="circuit">
+        <div class="circuit-number">#3 Monza</div>
+        <a href="https://en.wikipedia.org/wiki/Autodromo_Nazionale_Monza" target="_blank">
+            <img src="monza.jpg" alt="Monza">
+            <div class="circuit-name"style="display: none; justify-content: center;">Monza, Italy</div>
+        </a>
+    </div>
+
+    <div class="circuit">
+        <div class="circuit-number">#4 Silverstone</div>
+        <a href="https://en.wikipedia.org/wiki/Silverstone_Circuit" target="_blank">
+            <img src="silverstone.jpg" alt="Silverstone">
+            <div class="circuit-name"style="display: none; justify-content: center;">Silverstone, Britain</div>
+        </a>
+    </div>
+
+    <div class="circuit">
+        <div class="circuit-number">#5 Suzuka</div>
+        <a href="https://en.wikipedia.org/wiki/Suzuka_International_Racing_Course" target="_blank">
+            <img src="suzuka.jpg" alt="Suzuka">
+            <div class="circuit-name"style="display: none; justify-content: center;">Suzuka, Japan</div>
+        </a>
+    </div>
+</div>
+
+                             <!------------------about section--------------->  
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to Cars & Racing!</p>
+
+<p>Whether you're a car enthusiast, a racing fanatic, or simply curious about the latest automotive trends, you'll find something of interest here. From in-depth articles on car models and racing events to informative guides on automotive technology, our goal is to educate, entertain, and inspire our readers.</p>
+<p><b>As a computer science engineering student, I created this website as part of a university project for Web Solutions. Combining my passion for coding with my love for cars and racing, I aim to provide you with the latest information, updates, and insights into the world of automobiles and motorsports.</b></p>
+<p>Join us on this journey to explore the fascinating world of cars and racing. Keep racing, keep coding, and let's enjoy the ride together!</p>
+
+    </section>
+                                  <!------------------contact section--------------->
+   <section id="contact" style="padding: 20px;">
+    <div style="background-color: red; padding: 10px;">
+        <h2 style="color: white;">Contact Us</h2>
+        <p style="color: white;">Have a question or comment? Feel free to get in touch with us!</p>
+    </div>
+    <form action="#" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="query">Query/Comment:</label><br>
+        <textarea id="query" name="query" rows="6" cols="50" required></textarea><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</section>
+
+
+
+
+    <footer>
+        <p>&copy; 2024 Cars & Racing. All rights reserved.</p>
+    </footer>
+</body>
+</html>
